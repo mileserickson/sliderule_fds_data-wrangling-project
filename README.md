@@ -1,10 +1,10 @@
 # Data Wrangling Project
-## Miles Erickson
-## December 28, 2015
+Miles Erickson
+December 28, 2015
 
 # Required Submittals:
 
- 1. [Tidy data set](https://github.com/mileserickson/springboard_data-wrangling-project/sidewalks.RData)
+ 1. [Tidy data set](https://github.com/mileserickson/springboard_data-wrangling-project/data/sidewalks.RData)
  2. [Link to github repository](https://github.com/mileserickson/springboard_data-wrangling-project/) with script for performing the analysis
  3. [Code Book](https://github.com/mileserickson/springboard_data-wrangling-project/CodeBook.md) describing variables, data, and transformations
 
