@@ -30,8 +30,5 @@ source('scrape_sidewalks.R')
 # Convert scraped ESRI JSON to GeoJSON and output to a file
 source('output_geojson.R')
 
-# Read the generated sidewalks GeoJSON file into a SpatialLinesDataFrame
-sidewalks <- readOGR("data/sidewalks.json", "OGRGeoJSON")
-
 # Count the trees, adding sidewalks$tree_count and sidewalks$trees_per_ft
 source('count_trees.R')
