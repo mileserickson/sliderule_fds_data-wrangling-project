@@ -54,9 +54,6 @@ sidewalks <- spTransform(sidewalks, CRS(proj4string(trees)))
 # Buffer sidewalks by 20 feet
 sidewalk_buffers <- gBuffer(sidewalks, width=20, byid=TRUE)
 
-# Output sidewalk buffers to a shapefile for use in GIS software
-writeOGR(sidewalk_buffers, 'data/sidewalk_buffers.json', driver='ESRI Shapefile')
-
 # Identify the adjoining sidewalk for each individual tree
 trees$sidewalk_id <- over(trees, sidewalk_buffers)$sidewalk_id
 ## BUG (minor): Each tree is attributed to one sidewalk at most,
@@ -71,7 +68,8 @@ sidewalk_tree_counts <- data.frame(trees) %>%
   summarise(tree_count = n())
 
 # Add tree count as column in sidewalks data frame
-sidewalks$tree_count <- left_join(sidewalks, sidewalk_tree_counts)$tree_count
+sidewalks$tree_count <- left_join(data.frame(sidewalks$sidewalk_id), 
+                                  sidewalk_tree_counts)$tree_count
 
 # Change all NA values to 0
 NAtoZero <- function(x) {ifelse(is.na(x), 0, x)}
