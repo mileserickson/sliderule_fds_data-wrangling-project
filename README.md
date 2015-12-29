@@ -1,6 +1,6 @@
 # Data Wrangling Project
-Miles Erickson
-December 28, 2015
+
+Submitted by Miles Erickson on December 28, 2015
 
 # Required Submittals:
 
